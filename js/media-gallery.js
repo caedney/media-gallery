@@ -1,4 +1,3 @@
-
 (function($) {
 
     //Create Gallery Object and ID galID
