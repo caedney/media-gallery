@@ -47,7 +47,6 @@
                 'iframe': true
             }];
             galObj[alias].id = galID += 1;
-            console.log(galObj);
             //Initialise Light Gallery
             galInit($this, alias);
         } else {
