@@ -71,7 +71,6 @@
                     galObj[alias] = new Object;
                     galObj[alias].content = $.makeArray(galData);
                     galObj[alias].id = galID += 1;
-                    console.log(galObj);
                     //Initialise Light Gallery
                     galInit($this, alias);
                 },
