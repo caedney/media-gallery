@@ -40,7 +40,7 @@
     var getContent = function($this, alias, iframe) {
         if (iframe) {
             //Create New Gallery Object Properties
-            galObj[alias] = new Object;
+            galObj[alias] = {};
             galObj[alias].content = [{
                 'src': iframe.url,
                 'iframe': true
@@ -68,7 +68,7 @@
                         };
                     });
                     //Create New Gallery Object Properties
-                    galObj[alias] = new Object;
+                    galObj[alias] = {};
                     galObj[alias].content = $.makeArray(galData);
                     galObj[alias].id = galID += 1;
                     //Initialise Light Gallery
