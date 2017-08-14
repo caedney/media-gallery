@@ -94,5 +94,12 @@
             cssEasing: 'cubic-bezier(0.25, 0, 0.25, 1)'
         });
     };
+    
+    // Initialise
+    $('.element').on('click', function(event) {
+        event.preventDefault();
+        var alias = $(this).attr('href');
+        checkMedia($(this), alias);
+    });
 
 }(jQuery));
