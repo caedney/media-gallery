@@ -1,4 +1,3 @@
-
 (function($) {
 
     //Create Gallery Object and ID galID
@@ -41,13 +40,12 @@
     var getContent = function($this, alias, iframe) {
         if (iframe) {
             //Create New Gallery Object Properties
-            galObj[alias] = new Object;
+            galObj[alias] = {};
             galObj[alias].content = [{
                 'src': iframe.url,
                 'iframe': true
             }];
             galObj[alias].id = galID += 1;
-            console.log(galObj);
             //Initialise Light Gallery
             galInit($this, alias);
         } else {
@@ -70,10 +68,9 @@
                         };
                     });
                     //Create New Gallery Object Properties
-                    galObj[alias] = new Object;
+                    galObj[alias] = {};
                     galObj[alias].content = $.makeArray(galData);
                     galObj[alias].id = galID += 1;
-                    console.log(galObj);
                     //Initialise Light Gallery
                     galInit($this, alias);
                 },
@@ -99,10 +96,3 @@
     };
 
 }(jQuery));
-
-//INIT
-$('.element').on('click', function(event) {
-    event.preventDefault();
-    var alias = $(this).attr('href');
-    checkMedia($(this), alias);
-});
