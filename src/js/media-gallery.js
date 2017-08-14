@@ -39,14 +39,14 @@
     // Create new object based on content
     var getContent = function($this, alias, iframe) {
         if (iframe) {
-            //Create New Gallery Object Properties
+            // Create New Gallery Object Properties
             galObj[alias] = {};
             galObj[alias].content = [{
                 'src': iframe.url,
                 'iframe': true
             }];
             galObj[alias].id = galID += 1;
-            //Initialise Light Gallery
+            // Initialise Light Gallery
             galInit($this, alias);
         } else {
             $.ajax({
@@ -57,9 +57,9 @@
                     $('#loading').show();
                 },
                 success: function(data, success) {
-                    //Find first Thumbnail Gallery on page
+                    // Find first Thumbnail Gallery on page
                     var contentLoad = $(data).find('.photoGalleryElement')[0];
-                    //Map Contents of Fluency Thumbnail Gallery
+                    // Map Contents of Fluency Thumbnail Gallery
                     var galData = $(contentLoad).find('.thumbContents a').map(function(ind, img) {
                         return {
                             'src': $(img).attr('href'),
@@ -67,11 +67,11 @@
                             'subHtml': $(img).find('img').attr('alt')
                         };
                     });
-                    //Create New Gallery Object Properties
+                    // Create New Gallery Object Properties
                     galObj[alias] = {};
                     galObj[alias].content = $.makeArray(galData);
                     galObj[alias].id = galID += 1;
-                    //Initialise Light Gallery
+                    // Initialise Light Gallery
                     galInit($this, alias);
                 },
                 complete: function() {
