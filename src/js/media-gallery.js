@@ -1,10 +1,10 @@
 (function($) {
 
-    //Create Gallery Object and ID galID
+    // Create Gallery Object and ID galID
     var galObj = {},
         galID = 0;
 
-    //Check images or video
+    // Check images or video
     var checkMedia = function($this, alias) {
         if (alias.match(/youtube.com/g)) {
             var video_id = alias.split('v=')[1];
@@ -27,7 +27,7 @@
         containsObj($this, alias, iframe);
     };
 
-    //Check if object exists
+    // Check if object exists
     var containsObj = function($this, alias, iframe) {
         if (galObj.hasOwnProperty(alias)) {
             galInit($this, alias);
